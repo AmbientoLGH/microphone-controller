@@ -29,7 +29,7 @@ def start_recording(callback):
     print("Microphone listener started")
 
     while configuration.microphoneRunning:
-        data = np.fromstring(stream.read(CHUNK,exception_on_overflow=False), dtype=np.int16)
+        data = np.fromstring(stream.read(CHUNK, exception_on_overflow=False), dtype=np.int16)
         abs_data = np.abs(data)
         items = []
         for x in range(configuration.inputRange):
