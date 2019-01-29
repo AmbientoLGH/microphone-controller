@@ -15,7 +15,7 @@ def start_socket(callback, reconnect=True):
     try:
         @socket.on("connect")
         def on_connect():
-            socket.emit("device", {type:"python"})  # Emitting signal to NodeJS Module
+            socket.emit("device", {"type": "python"})  # Emitting signal to NodeJS Module
             callback("connected", socket)
 
         @socket.on(configuration.socketCommunicationChannel)
